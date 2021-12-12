@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>EMS</h1>
+    <p class="lead">EMS site</p>
+    <p><a href="@Url.Action("About", "Home")" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            desc1
+        </p>
+        <p><a href="@Url.Action("Todo", "Todo")" class="btn btn-primary btn-lg">Start &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Next!</h2>
+        <p>
+            desc2 
+        </p>
+        <p><a href="@Url.Action("Todo", "Todo")" class="btn btn-primary btn-lg">Process! &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p>
+            desc3
+        </p>
+        <p><a href="@Url.Action("Todo", "Todo")" class="btn btn-primary btn-lg">Contact &raquo;</a></p>
+    </div>
+</div>
