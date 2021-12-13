@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace UserInterfaceLayer.Models
+namespace UserInterfaceLayer.Models.Employee
 {
     public class EmployeePeriodViewModel: PeriodViewModel
     {

@@ -199,6 +199,7 @@
     <Compile Include="Library\UserInfoProviders\IUserInfoProvider.cs" />
     <Compile Include="Library\UserInfoProviders\UserInfoProvider.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Employee\CreateEmployeeViewModel.cs" />
     <Compile Include="Models\Employee\PeriodViewModel.cs" />
     <Compile Include="Models\Employee\EmployeePeriodViewModel.cs" />
     <Compile Include="Models\Employee\EmployeeCardViewModel.cs" />
@@ -266,10 +267,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="tsconfig.json" />
+    <Content Include="Views\Employee\EmployeeCard.cshtml" />
+    <Content Include="Views\Employee\CreateNewEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

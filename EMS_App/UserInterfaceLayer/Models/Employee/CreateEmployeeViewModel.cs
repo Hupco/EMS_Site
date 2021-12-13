@@ -5,10 +5,11 @@ using System.Web;
 
 namespace UserInterfaceLayer.Models.Employee
 {
-    public class PeriodViewModel
+    public class CreateEmployeeViewModel
     {
         public Guid Id { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int PhoneNumber { get; set; }
     }
 }

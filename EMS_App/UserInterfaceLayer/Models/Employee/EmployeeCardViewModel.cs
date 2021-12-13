@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UserInterfaceLayer.Models
+namespace UserInterfaceLayer.Models.Employee
 {
     public class EmployeeCardViewModel
     {

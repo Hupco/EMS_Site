@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using UserInterfaceLayer.Library.ModelsConverters;
 using UserInterfaceLayer.Library.UserInfoProviders;
 using UserInterfaceLayer.Models;
+using UserInterfaceLayer.Models.Employee;
 
 namespace UserInterfaceLayer.Controllers
 {
@@ -24,6 +25,7 @@ namespace UserInterfaceLayer.Controllers
         }
 
         // GET: EmployeeCardViewModel
+        [HttpGet]
         public ActionResult EmployeeCard()
         {
             var employee = _logicService.GetEmployeeById(_userInfoProvider.GetUserId());
@@ -31,6 +33,15 @@ namespace UserInterfaceLayer.Controllers
             EmployeeCardViewModel employeeCardViewModel = _modelsConverter.ToEmployeeCardViewModel(employee);
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult CreateNewEmployee()
+        {
+            var createEmployeeViewModel = new CreateEmployeeViewModel();
+            createEmployeeViewModel.Id = _userInfoProvider.GetUserId();
+
+            return View(createEmployeeViewModel);
         }
     }
 }
