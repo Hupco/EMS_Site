@@ -13,7 +13,7 @@ namespace UserInterfaceLayer.Models
         public string Rank { get; set; }
         public List<string> Specializations { get; set; }
         public List<string> Trainings { get; set; }
-        public List<EmployeePeriodViewModel> WorkTimes { get; set; }
+        public List<EmployeePeriodViewModel> WorkTime { get; set; }
         public EmployeePeriodViewModel TimeOff { get; set; }
     }
 }

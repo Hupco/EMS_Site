@@ -2,6 +2,7 @@
 using LogicLayer.Converters;
 using LogicLayer.Models;
 using System;
+using System.Collections.Generic;
 
 namespace LogicLayer.LogicServices
 {
@@ -19,8 +20,11 @@ namespace LogicLayer.LogicServices
         public Employee GetEmployeeById(Guid id)
         {
             var dalEmployee = _dataService.GetEmployeeById(id);
+            DataAccessLayer.Entities.Rank dalEmployeeRank = _dataService.GetRankById(dalEmployee.Rank);
+            List<DataAccessLayer.Entities.Specialization> dalEmployeeSpecializations = _dataService.GetSpecializationsByIds(dalEmployee.Specializations);
+            List<DataAccessLayer.Entities.Training> dalEmployeeTrainings = _dataService.GetTrainingsByIds(dalEmployee.Trainings);
 
-            var employee = _converter.ToLLEmployee(dalEmployee);
+            var employee = _converter.ToLLEmployee(dalEmployee, dalEmployeeRank, dalEmployeeSpecializations, dalEmployeeTrainings);
 
             return employee;
         }

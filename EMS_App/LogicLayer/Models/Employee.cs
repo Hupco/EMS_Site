@@ -20,7 +20,7 @@ namespace LogicLayer.Models
         }
 
         public Employee(Guid id, string firstName, string lastName,
-            int phoneNumber, Rank rank, List<Specialization> specializations, int badgeNumber,
+            int phoneNumber, int badgeNumber, Rank rank, List<Specialization> specializations,
             List<Training> trainings ,List<EmployeePeriod> workTime, EmployeePeriod timeOff)
             : base(id, firstName, lastName, phoneNumber)
         {

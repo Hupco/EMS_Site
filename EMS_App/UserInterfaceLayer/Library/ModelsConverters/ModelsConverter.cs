@@ -19,7 +19,22 @@ namespace UserInterfaceLayer.Library.ModelsConverters
             employeeCardViewModel.PhoneNumber = employee.PhoneNumber;
             employeeCardViewModel.BadgeNumber = employee.BadgeNumber;
             employeeCardViewModel.Rank = employee.Rank.Name;
-            //employeeCardViewModel.Specializations.AddRange() //todo: end getting employee
+            employeeCardViewModel.Specializations.AddRange(employee.Specializations.Select(spec => spec.Name));
+            employeeCardViewModel.Trainings.AddRange(employee.Trainings.Select(traininig => traininig.Name));
+            employeeCardViewModel.WorkTime.AddRange(employee.WorkTime.Select(time => new EmployeePeriodViewModel()
+            {
+                Id = time.Id,
+                WorkerId = time.WorkerId,
+                Start = time.Start,
+                End = time.End
+            }));
+            employeeCardViewModel.TimeOff = new EmployeePeriodViewModel()
+            {
+                Id = employee.TimeOff.Id,
+                WorkerId = employee.TimeOff.WorkerId,
+                Start = employee.TimeOff.Start,
+                End = employee.TimeOff.End
+            };
 
             return employeeCardViewModel;
         }
