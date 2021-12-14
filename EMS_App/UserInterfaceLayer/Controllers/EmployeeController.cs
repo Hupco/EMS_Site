@@ -1,5 +1,6 @@
 ﻿using LogicLayer.LogicServices;
 using System.Web.Mvc;
+using LogicLayer.Models;
 using UserInterfaceLayer.Library.ModelsConverters;
 using UserInterfaceLayer.Library.UserInfoProviders;
 using UserInterfaceLayer.Models.Employee;
@@ -25,7 +26,7 @@ namespace UserInterfaceLayer.Controllers
         {
             var employee = _logicService.GetEmployeeById(_userInfoProvider.GetUserId());
 
-            EmployeeCardViewModel employeeCardViewModel = _modelsConverter.ToEmployeeCardViewModel(employee);
+            var employeeCardViewModel = _modelsConverter.ToEmployeeCardViewModel(employee);
 
             return View();
         }
@@ -33,10 +34,26 @@ namespace UserInterfaceLayer.Controllers
         [HttpGet]
         public ActionResult CreateNewEmployee()
         {
-            var createEmployeeViewModel = new CreateEmployeeViewModel();
-            createEmployeeViewModel.Id = _userInfoProvider.GetUserId();
+            var createEmployeeViewModel = new CreateEmployeeViewModel
+            {
+                Id = _userInfoProvider.GetUserId()
+            };
 
             return View(createEmployeeViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult CreateNewEmployee(CreateEmployeeViewModel createEmployeeViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Error");
+            }
+
+            var newEmployee = _modelsConverter.ToNewEmployee(createEmployeeViewModel);
+            _logicService.AddNewEmployee(newEmployee);
+
+            return RedirectToAction("Index","Home");
         }
     }
 }

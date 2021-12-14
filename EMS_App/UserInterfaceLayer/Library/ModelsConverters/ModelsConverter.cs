@@ -35,5 +35,16 @@ namespace UserInterfaceLayer.Library.ModelsConverters
 
             return employeeCardViewModel;
         }
+
+        public Employee ToNewEmployee(CreateEmployeeViewModel newEmployeeViewModel)
+        {
+            var newEmployee = new Employee(
+                    newEmployeeViewModel.Id,
+                    newEmployeeViewModel.FirstName,
+                    newEmployeeViewModel.LastName,
+                    newEmployeeViewModel.PhoneNumber);
+
+            return newEmployee;
+        }
     }
 }

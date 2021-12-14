@@ -6,5 +6,6 @@ namespace UserInterfaceLayer.Library.ModelsConverters
     public interface IModelsConverter
     {
         EmployeeCardViewModel ToEmployeeCardViewModel(Employee employee);
+        Employee ToNewEmployee(CreateEmployeeViewModel createEmployeeViewModel);
     }
 }

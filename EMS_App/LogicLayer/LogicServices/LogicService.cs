@@ -20,13 +20,19 @@ namespace LogicLayer.LogicServices
         public Employee GetEmployeeById(Guid id)
         {
             var dalEmployee = _dataService.GetEmployeeById(id);
-            DataAccessLayer.Entities.Rank dalEmployeeRank = _dataService.GetRankById(dalEmployee.Rank);
-            List<DataAccessLayer.Entities.Specialization> dalEmployeeSpecializations = _dataService.GetSpecializationsByIds(dalEmployee.Specializations);
-            List<DataAccessLayer.Entities.Training> dalEmployeeTrainings = _dataService.GetTrainingsByIds(dalEmployee.Trainings);
+            var dalEmployeeRank = _dataService.GetRankById(dalEmployee.Rank);
+            var dalEmployeeSpecializations = _dataService.GetSpecializationsByIds(dalEmployee.Specializations);
+            var dalEmployeeTrainings = _dataService.GetTrainingsByIds(dalEmployee.Trainings);
 
-            var employee = _converter.ToLLEmployee(dalEmployee, dalEmployeeRank, dalEmployeeSpecializations, dalEmployeeTrainings);
+            var employee = _converter.ToLlEmployee(dalEmployee, dalEmployeeRank, dalEmployeeSpecializations, dalEmployeeTrainings);
 
             return employee;
+        }
+
+        public void AddNewEmployee(Employee newEmployee)
+        {
+
+            var dalNewEmployee = _converter.ToDalEmployee(newEmployee);
         }
     }
 }

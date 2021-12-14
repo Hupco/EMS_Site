@@ -60,5 +60,14 @@ namespace DataAccessLayer.DataServices
                 .ToList();
             return workTime;
         }
+
+        public List<int> GetOccupiedBadgeNumbers()
+        {
+            var badgeNumbers = _dataContext.Employees?
+                .Select(employee => employee.BadgeNumber)
+                .ToList();
+
+            return badgeNumbers;
+        }
     }
 }
