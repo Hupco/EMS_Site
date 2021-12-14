@@ -1,12 +1,7 @@
 ﻿using LogicLayer.LogicServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using UserInterfaceLayer.Library.ModelsConverters;
 using UserInterfaceLayer.Library.UserInfoProviders;
-using UserInterfaceLayer.Models;
 using UserInterfaceLayer.Models.Employee;
 
 namespace UserInterfaceLayer.Controllers

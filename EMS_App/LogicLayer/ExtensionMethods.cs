@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using System.Windows.Documents;
-
-namespace LogicLayer
+﻿namespace LogicLayer
 {
     public static class ExtensionMethods
     {

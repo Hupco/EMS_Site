@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using LogicLayer;
+﻿using System.Linq;
 using LogicLayer.Models;
-using UserInterfaceLayer.Models;
+using UserInterfaceLayer.Models.Employee;
 
 namespace UserInterfaceLayer.Library.ModelsConverters
 {

@@ -1,6 +1,5 @@
 ﻿using LogicLayer.Models;
-using System.Collections.Generic;
-using UserInterfaceLayer.Models;
+using UserInterfaceLayer.Models.Employee;
 
 namespace UserInterfaceLayer.Library.ModelsConverters
 {
